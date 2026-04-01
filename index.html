@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        button {
+            background: white;
+            color: #764ba2;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .counter {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to My Coding Journey! 🚀</h1>
+    <p>I'm learning to code and building my future.</p>
+
+    <div class="counter">0</div>
+    <button>Click Me!</button>
+
+    <script>
+        let count = 0;
+        const counter = document.querySelector('.counter');
+        const button = document.querySelector('button');
+
+        button.addEventListener('click', () => {
+            count++;
+            counter.textContent = count;
+
+            if (count === 10) {
+                alert('🎉 You hit 10 clicks! You\'re doing great!');
+            }
+        });
+    </script>
+</body>
+
+</html>
