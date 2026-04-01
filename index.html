@@ -27,6 +27,7 @@
             cursor: pointer;
             margin-top: 20px;
             font-weight: bold;
+            margin-right: 10px;
         }
 
         button:hover {
@@ -38,6 +39,7 @@
             font-size: 48px;
             font-weight: bold;
             margin: 20px 0;
+            transition: color 0.3s ease;
         }
     </style>
 </head>
@@ -48,19 +50,41 @@
 
     <div class="counter">0</div>
     <button>Click Me!</button>
+    <button id="reset">Reset</button>
 
     <script>
         let count = 0;
         const counter = document.querySelector('.counter');
         const button = document.querySelector('button');
+        const resetBtn = document.querySelector('#reset');
 
+        // Function to update counter color based on count
+        function updateColor() {
+            if (count >= 10) {
+                counter.style.color = '#ffd700'; // gold
+            } else if (count >= 5) {
+                counter.style.color = '#90ee90'; // light green
+            } else {
+                counter.style.color = 'white';
+            }
+        }
+
+        // Click button event
         button.addEventListener('click', () => {
             count++;
             counter.textContent = count;
+            updateColor();
 
             if (count === 10) {
                 alert('🎉 You hit 10 clicks! You\'re doing great!');
             }
+        });
+
+        // Reset button event
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            counter.textContent = count;
+            updateColor();
         });
     </script>
 </body>
